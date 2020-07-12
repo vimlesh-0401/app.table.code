@@ -1,0 +1,72 @@
+<div class="divider-1"></div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="city">City</label>
+  </div>
+  <div class="cols col-14">
+    <input type="text" [(ngModel)]="table.city">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="starte_date">Start Date</label>
+  </div>
+  <div class="cols col-14">
+    <input type="date" [(ngModel)]="table.start_date">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="end_date">End Date</label>
+  </div>
+  <div class="cols col-14">
+    <input type="date" [(ngModel)]="table.end_date">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="price">Price</label>
+  </div>
+  <div class="cols col-14">
+    <input type="text" [(ngModel)]="table.price">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="status">Status</label>
+  </div>
+  <div class="cols col-14">
+    <input type="text" [(ngModel)]="table.status">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="spacer"></div>
+  <div class="cols col-6">
+    <label for="color">Color</label>
+  </div>
+  <div class="cols col-14">
+    <input type="text" [(ngModel)]="table.color">
+  </div>
+  <div class="spacer"></div>
+</div>
+<div class="row">
+  <div class="cols col-4" *ngIf="!table._id">
+    <input type="button" value="Save" (click)="saveRecord()">
+  </div>
+  <div class="cols col-4" *ngIf="table._id">
+    <input type="button" value="Update" (click)="updateRecord()">
+  </div>
+  <div class="cols col-4">
+    <input type="button" value="Cancel" (click)="goToRecords()">
+  </div>
+</div>
