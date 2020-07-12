@@ -1,21 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="controls">
+  <input [(ngModel)]="startDate" type="date"><input [(ngModel)]="endDate" type="date"> <button (click)="filter()">Filter</button>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
+<div class="table-container">
+  <table class="by1">
+    <thead>
+      <tr>
+        <th><a (click)="sortBy('city')" class="sort-by">City</a></th>
+        <th><a (click)="sortBy('start_date')" class="sort-by">Start Date</a></th>
+        <th><a (click)="sortBy('end_date')" class="sort-by">End Date</a></th>
+        <th><a (click)="sortBy('price')" class="sort-by">Price</a></th>
+        <th><a (click)="sortBy('status')" class="sort-by">Status</a></th>
+        <th><a (click)="sortBy('color')" class="sort-by">Color</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of entries">
+        <td>{{t.city}}</td>
+        <td>{{t.start_date|date:'y-M-d'}}</td>
+        <td>{{t.end_date|date:'y-M-d'}}</td>
+        <td>{{t.price}}</td>
+        <td>{{t.status}}</td>
+        <td>{{t.color}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
